@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - VitalWay Gym</title>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="validate.js" defer></script>
+    <script src="validate-login.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="header.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="nombre-sitio"><a href="index.html">VitalWay<span> Gym </span></a></h1>
+    </header>
+
+    <div class="contenedor-navegacion">
+      <nav class="nav-principal contenedor">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Mi cuenta</a>
+        <a href="register.html">Regístrate</a>
+        <a href="price.html">Tarifas</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+    </div>
+
+    <main class="contenido-principal contenedor">
+      <div id="login-bienvenido">
+        <h2 class="text-center">Bienvenido a tu espacio</h2>
+      </div>
+
+      <form class="formulario" id="form" action="../controller/gestor.php" method = "POST"> <!-- Se añade el action y metodo para ejecutar la validació del server -->
+        <fieldset>
+          <legend>Tus Datos</legend>
+
+          <!-- <div class="campo">
+            <label for="nombre">Nombre: </label>
+            <input id="nombre" type="text" placeholder="Tu Nombre" required /><br>
+            <span id="mensajeNombre" class="mensaje"></span> <br>
+          </div> -->
+
+          <div class="campo">
+            <label for="email">E-mail:</label>
+            <input id="email" name="email" type="email" placeholder="Tu Email" /><br><!-- Se añade el atributo "name" -->
+            <span id="mensajeMail" class="mensaje"></span>  <br>
+          </div>
+
+          <div class="campo">
+            <label for="pass">Contraseña:</label>
+            <input id="pass" name="pass" type="password" /><br><!-- Se añade el atributo "name" -->
+            <span id="mensajeContra" class="mensaje"></span> <br>
+          </div>
+          <a href="forgot_password.html" id="forgot-pass">¿Has olvidado la contraseña?</a>
+        </fieldset>
+
+        <input id="login" class="btn" type="submit" value="Entrar" />
+        <span id="mensajeError" class="mensaje-error"></span>
+      </form>
+    </main> 
+    <footer class="site-footer">
+        <div>
+          <h3>Contacto</h3>
+          <p><span>Ubicación:</span>C/ de Balmes, 32, Barcelona</p>
+          <p><span>Teléfono: </span> 97233568</p>
+          <p><span>Mail:</span>vitalway@gmail.com</p>
+        </div>
+  
+        <p class="copyright"> &#169 Todos los derechos Reservados, VitalWay</p>
+      </footer>
+  </body>
+</html>

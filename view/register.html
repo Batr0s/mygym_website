@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitalWayGim</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="header.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1 class="nombre-sitio"><a href="index.html">VitalWay<span> Gym </span></a></h1>
+  </header>
+  <div class="contenedor-navegacion">
+    <nav class="nav-principal contenedor">
+      <a href="index.html">Inicio</a>
+      <a href="login.html">Mi cuenta</a>
+      <a href="register.html">Regístrate</a>
+      <a href="price.html">Tarifas</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </div>
+
+  <main class="contenido-principal contenedor">
+
+    <section>
+      <div class="formulario_contacto">
+        <div class="box-title-form">
+          <h2 id="h2-form">Formulario de registro</h2>
+          <h3 id="h3-form">Registrate y en breve nos pondremos en contacto contigo:</h3>
+        </div>
+
+        <form id="registroForm">
+          <div id="form-div">
+            <div class="form-div-in">
+              <label for="nombre" class="colocar_nombre">Nombre: <span class="obligatorio">*</span> </label>
+              <input type="text" name="introducir_nombre" id="nombre" required="obligatorio"
+                placeholder="Escribe tu nombre">
+
+              <label for="apellidos" class="colocar_apellidos">Apellidos:<span class="obligatorio">*</span></label>
+              <input type="text" name="introducir_apellidos" id="apellidos" required="obligatorio"
+                placeholder="Escribe tus apellidos">
+
+              <label for="edad" class="colocar_edad">Fecha de nacimiento:<span class="obligatorio">*</span></label>
+              <input type="date" name="introducir_edad" id="edad" required="obligatorio"
+                placeholder="Escribe tu fecha de nacicmiento">
+
+              <label for="email" class="colocar_email">Correo Electrónico:<span class="obligatorio">*</span></label>
+              <input type="email" name="introducir_email" id="email" required="obligatorio"
+                placeholder="Escribe tu e-mail">
+
+              <label for="telefono" class="colocar_telefono">Teléfono</label>
+              <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+            </div>
+
+            <div id="second-box" class="form-div-in">
+              <label for="password">Contraseña:<span class="obligatorio">*</span></label>
+              <div class="pass-field">
+                <input type="password" placeholder="Introduce contraseña" id="password" />
+                <i class="fas fa-eye" id="togglePassword"></i>
+              </div>
+              <div class="content">
+                <p>La contraseña debe contener:</p>
+                <ul id="requirement-list">
+                  <li class="length"><span class="check">✓</span> Al menos 8 caracteres de longitud</li>
+                  <li class="number"><span class="check">✓</span> Al menos 1 número (0...9)</li>
+                  <li class="lowercase"><span class="check">✓</span> Al menos 1 letra minúscula (a...z)</li>
+                  <li class="uppercase"><span class="check">✓</span> Al menos 1 letra mayúscula (A...Z)</li>
+                  <li class="special"><span class="check">✓</span> Al menos 1 símbolo especial (!...$)</li>
+                </ul>
+              </div>
+              <label for="confirmarPassword" class="colocar_confirmarPassword">Confirma contraseña<span
+                  class="obligatorio">*</span></label>
+              <input type="password" name="introducir_confirmarPassword" id="confirmarPassword" required="obligatorio"
+                placeholder="Confirmar contraseña">
+
+              <div class="g-recaptcha" data-sitekey="6LexDMkpAAAAAIZ8vtcOXiPY3zSSSqgVJ5HyUy0F"></div>
+              <button type="button" id="boton_enviar" onclick="validarRegistro()">Siguiente</button>
+              <p class="aviso"><span class="obligatorio"> * </span>los campos son obligatorios.</p>
+            </div>
+          </div>
+      </div>
+
+        <div class="tarifas-registro">
+          <h2>Escoge tu tarifa:</h2>
+          <div id="register-price-box">
+            <div class="price-box">
+              <div class="price-header align-price-header">
+                <input type="radio" id="tarifa_basica" name="tarifa" value="Basica">
+                <label for="tarifa_basica">Tarifa BÁSICA</label><br>
+              </div>
+              <div class="price-text">
+                <p>Acceso ilimitado al gimnasio durante el horario de apertura.</p>
+                <p class="price">29.99<span>€/mes</span></p>
+              </div>
+            </div>
+            <div class="price-box">
+              <div class="price-header align-price-header">
+                <input type="radio" id="tarifa_premium" name="tarifa" value="Premium">
+                <label for="tarifa_premium">Tarifa PREMIUM</label><br>
+              </div>
+              <div class="price-text">
+                <p>Acceso ilimitado al gimnasio y todas las clases incluidas.</p>
+                <p class="price">49.99<span>€/mes</span></p>
+              </div>
+            </div>
+            <div class="price-box">
+              <div class="price-header align-price-header">
+                <input type="radio" id="tarifa_vip" name="tarifa" value="VIP">
+                <label for="tarifa_vip">Tarifa VIP</label><br>
+              </div>
+              <div class="price-text">
+                <p>Acceso ilimitado al gimnasio, todas las clases incluidas y entrenador personal.</p>
+                <p class="price">79.99<span>€/mes</span></p>
+              </div>
+            </div>
+          </div>
+          <button type="button" onclick="create_user()">FINALIZAR REGISTRO</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <h3>Contacto</h3>
+      <p><span>Ubicación:</span>C/ de Balmes, 32, Barcelona</p>
+      <p><span>Teléfono: </span> 97233568</p>
+      <p><span>Mail:</span>vitalway@gmail.com</p>
+    </div>
+
+    <p class="copyright"> &#169 Todos los derechos Reservados, VitalWay</p>
+  </footer>
+  <script src="validate.js"></script>
+  <script src="validate-check.js"></script>
+  <script src="create-user.js"></script>
+</body>
+
+</html>
